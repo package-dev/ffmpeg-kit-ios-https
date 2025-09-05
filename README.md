@@ -1,55 +1,55 @@
 # ffmpeg-kit-ios-https
 
-Thư viện iOS đóng gói FFmpeg Kit với hỗ trợ HTTPS. Dự án giúp tích hợp nhanh FFmpeg vào ứng dụng iOS với cấu hình phù hợp cho truyền tải qua HTTPS.
+An iOS wrapper around FFmpeg Kit with HTTPS support. This project helps you integrate FFmpeg into iOS apps quickly with configurations suitable for HTTPS-based transfers and streaming.
 
-## Tính năng
+## Features
 
-- Tích hợp FFmpeg Kit cho iOS
-- Hỗ trợ HTTPS cho tải/stream nội dung
-- Phân phối qua CocoaPods (podspec đi kèm)
+- Integrates FFmpeg Kit for iOS
+- HTTPS support for downloading/streaming content
+- Distributed via CocoaPods (podspec included)
 
-## Yêu cầu hệ thống
+## Requirements
 
-- Xcode 14 trở lên
-- iOS 12.0 trở lên
-- CocoaPods 1.11+ (khuyến nghị 1.12+)
+- Xcode 14 or later
+- iOS 12.0 or later
+- CocoaPods 1.11+ (1.12+ recommended)
 
-## Cài đặt (CocoaPods)
+## Installation (CocoaPods)
 
-1. Cài đặt CocoaPods nếu chưa có:
+1. Install CocoaPods if you haven't already:
 
 ```bash
 sudo gem install cocoapods
 ```
 
-2. Thêm vào `Podfile` của dự án iOS của bạn:
+2. Add the pod to your project's `Podfile`:
 
 ```ruby
 platform :ios, '12.0'
 use_frameworks!
 
 target 'YourAppTarget' do
-  pod 'ffmpeg-kit-ios-https', :git => 'https://github.com/<your-org>/ffmpeg-kit-ios-https.git'
-  # Hoặc nếu đã phát hành trên Specs:
-  # pod 'ffmpeg-kit-ios-https'
+  pod 'ffmpeg-kit-ios-https',
+    :git => 'https://github.com/package-dev/ffmpeg-kit-ios-https.git',
+    :tag => '6.0'
 end
 ```
 
-3. Cài đặt pods:
+3. Install pods:
 
 ```bash
 pod install
 ```
 
-4. Mở workspace vừa tạo và build dự án:
+4. Open the generated workspace and build the project:
 
 ```bash
 xed .
 ```
 
-## Sử dụng cơ bản
+## Basic Usage
 
-Ví dụ chạy lệnh FFmpeg với FFmpegKit (Swift):
+Example of running an FFmpeg command with FFmpegKit (Swift):
 
 ```swift
 import FFmpegKit
@@ -69,18 +69,18 @@ FFmpegKit.executeAsync("-i https://example.com/video.mp4 -f null -") { session i
 }
 ```
 
-Lưu ý: Cấu hình ATS (App Transport Security) phù hợp nếu truy cập endpoint HTTPS tự ký/chứng chỉ đặc thù.
+Note: Configure App Transport Security (ATS) as needed if you access HTTPS endpoints with self-signed or custom certificates.
 
-## Phát triển
+## Development
 
-- Chỉnh sửa `ffmpeg-kit-ios-https.podspec` khi thay đổi version/source/dependencies.
-- Kiểm tra tích hợp bằng cách trỏ `Podfile` của app vào repo này.
-- Khuyến nghị dùng Git tags khi phát hành (`pod repo push`/`pod trunk push`).
+- Update `ffmpeg-kit-ios-https.podspec` when changing version, source, or dependencies.
+- Test integration by pointing your app's `Podfile` to this repository.
+- Use Git tags for releases (`pod repo push` / `pod trunk push`).
 
-## Đóng góp
+## Contributing
 
-Mở issue hoặc gửi pull request kèm mô tả rõ ràng.
+Open an issue or submit a pull request with a clear description of changes.
 
-## Giấy phép
+## License
 
-Tham khảo tệp giấy phép đi kèm (nếu có). FFmpeg/FFmpegKit có giấy phép riêng; hãy tuân thủ điều khoản tương ứng.
+See the included license file (if any). FFmpeg/FFmpegKit carries its own license terms; ensure compliance when distributing within your application.
