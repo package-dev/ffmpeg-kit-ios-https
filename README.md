@@ -1,3 +1,7 @@
+## Origin
+
+This repository is adapted and maintained as an iOS-focused HTTPS distribution and was originally cloned/forked from FFmpegKit for React Native. For reference, see `ffmpeg-kit-react-native` on npm: `https://www.npmjs.com/package/ffmpeg-kit-react-native`.
+
 # ffmpeg-kit-ios-https
 
 An iOS wrapper around FFmpeg Kit with HTTPS support. This project helps you integrate FFmpeg into iOS apps quickly with configurations suitable for HTTPS-based transfers and streaming.
